@@ -127,7 +127,7 @@ autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight Comment ctermfg=darkgray
 set t_Co=256
-"let base16colorspace=256  " Access colors present in 256 colorspace
+let base16colorspace=256  " Access colors present in 256 colorspace
 "colorscheme desert256
 "colorscheme solarized
 colorscheme base16-tomorrow
