@@ -1,10 +1,5 @@
-dotvim
-======
-
-Vim configuration
-
-Install
-=======
+Installation
+============
 
     git clone --recursive git@github.com:zhangxiao/dotvim.git $HOME/.vim
     ln -sf $HOME/.vim/vimrc $HOME/.vimrc
