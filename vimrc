@@ -24,6 +24,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'sukima/xmledit'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chriskempson/base16-vim'
+Plugin 'tfnico/vim-gradle'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -196,8 +197,17 @@ nnoremap <S-l> gt
 " emmet (zencoding)
 let g:user_emmet_expandabbr_key='<C-e>'
 
-" ack:ag
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ack:ag
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
 
 " Sort scala imports
 autocmd BufWritePre * :silent! undojoin | silent! SortScalaImports
@@ -215,3 +225,5 @@ let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn))|target|data$'
 set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
+
+
