@@ -25,6 +25,7 @@ Plugin 'sukima/xmledit'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chriskempson/base16-vim'
 Plugin 'tfnico/vim-gradle'
+Plugin 'solarnz/thrift.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
