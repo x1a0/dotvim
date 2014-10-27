@@ -226,4 +226,4 @@ set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
-
+set pastetoggle=<F2>
