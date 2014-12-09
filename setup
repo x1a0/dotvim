@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+ln -sf ${ZDOTDIR:-$HOME}/.vim/vimrc ${ZDOTDIR:-$HOME}/.vimrc
+vim +PluginInstall +qall
