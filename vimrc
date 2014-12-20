@@ -27,6 +27,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'tfnico/vim-gradle'
 Plugin 'solarnz/thrift.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -233,3 +234,9 @@ autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
 set pastetoggle=<F2>
+
+"" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
