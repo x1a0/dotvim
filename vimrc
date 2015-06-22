@@ -217,7 +217,7 @@ if executable('ag')
 endif
 
 " Sort scala imports
-autocmd BufWritePre * :silent! undojoin | silent! SortScalaImports
+autocmd BufWritePre *.scala :silent! undojoin | silent! SortScalaImports
 nnoremap <silent> <F5> :EraseBadWhitespace<CR>:SortScalaImports<CR>"
 
 " Fugitive
