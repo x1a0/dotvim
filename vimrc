@@ -13,7 +13,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'msanders/snipmate.vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'bitc/vim-bad-whitespace'
@@ -28,6 +28,9 @@ Plugin 'tfnico/vim-gradle'
 Plugin 'solarnz/thrift.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'rking/ag.vim'
+Plugin 'x1a0/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -240,3 +243,35 @@ map <C-n> :NERDTreeToggle<CR>
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" multi cursors
+let g:multi_cursor_next_key='<C-m>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+" for triggering webpack watch
+set backupcopy=yes
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['jscs']
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" YCM
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
