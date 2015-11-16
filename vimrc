@@ -240,6 +240,8 @@ set pastetoggle=<F2>
 
 "" NERDTree
 map <C-n> :NERDTreeToggle<CR>
+" find current file
+map <leader>f :NERDTreeFind<cr>
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -265,9 +267,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jscs']
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
